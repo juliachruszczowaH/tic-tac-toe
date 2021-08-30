@@ -1,11 +1,13 @@
 class TicTacToe {
-  curr = 'x';
-  pane = [
-    [null, null, null],
-    [null, null, null],
-    [null, null, null],
-  ];
-  winner = null;
+  constructor() {
+    this.curr = 'x';
+    this.pane = [
+      [null, null, null],
+      [null, null, null],
+      [null, null, null],
+    ];
+    this.winner = null;
+  }
 
   getCurrentPlayerSymbol() {
     return this.curr;
@@ -19,7 +21,7 @@ class TicTacToe {
   }
 
   isFinished() {
-    return this.isDraw() || Boolean(this.getWinner());
+    return this.isDraw() || !!this.getWinner();
   }
 
   getWinner() {
